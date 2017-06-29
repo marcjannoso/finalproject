@@ -19,7 +19,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.posts.index')->with('posts', Post::all());
     }
 
     /**
@@ -73,13 +73,13 @@ class PostsController extends Controller
             'content'=>$request->content,
 
             'featured'=>'uploads/posts/'.$featured_new_name,
-            'category_id' => $request->category_id
-
+            'category_id' => $request->category_id,
+            'slug' => str_slug($request->title)
             ]);
 
         Session::flash('success','Post created successfully.');
 
-        dd($request->all());
+        return redirect()->back();
     }
 
     /**
