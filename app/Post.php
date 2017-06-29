@@ -14,6 +14,12 @@ class Post extends Model
       'title', 'content', 'category_id', 'featured', 'slug'
     ];  
 
+    public function getFeaturedAttritube($featured)
+
+    {
+    	return asset($featured);
+    }
+
     protected $dates = ['deleted_at'];
 
     public function category()
