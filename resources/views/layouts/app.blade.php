@@ -121,6 +121,10 @@
       
       @endif
 
+      @if(Session::has('info'))
+         toastr.info("{{ Session::get('info')}}")
+      @endif
     </script>
+
 </body>
 </html>
