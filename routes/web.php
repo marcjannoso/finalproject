@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/test', function(){
-    return App\Post::find(5)->tags;
+    return App\User::find(1)->profile;
 });
 
 
